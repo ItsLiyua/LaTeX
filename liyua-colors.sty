@@ -1,0 +1,39 @@
+\ProvidesPackage{liyua-colors}
+\NeedsTeXFormat{LaTeX2e}
+
+\RequirePackage{xcolor}
+
+\definecolor{page}{HTML}{FFFFFF}
+\definecolor{text}{HTML}{000000}
+\definecolor{code}{HTML}{444444}
+
+\definecolor{primary-dark}{HTML}{487782}
+\definecolor{primary-light}{HTML}{9E429C}
+\definecolor{secondary-dark}{HTML}{2A92BE}
+\definecolor{secondary-light}{HTML}{9B7CB5}
+\definecolor{tertiary-dark}{HTML}{448594}
+\definecolor{tertiary-light}{HTML}{C045BC}
+\definecolor{quarternary-dark}{HTML}{38C2FE}
+\definecolor{quarternary-light}{HTML}{CEA6F1}
+
+\pagecolor{page}
+\color{text}
+
+\newcommand{\reloadBoxColours}{
+	\colorlet{infoBulleBackground}{page!98!text}
+	\colorlet{infoBulleText}{text}
+	\colorlet{marginInfoBulleBackground}{page}
+	\colorlet{marginInfoBulleText}{text}
+
+	\colorlet{criticalColor}{quarternary-dark}
+	\colorlet{questionColor}{quarternary-light}
+	\colorlet{informationColor}{tertiary-dark}
+	\colorlet{checkColor}{tertiary-light}
+	\colorlet{warningColor}{secondary-dark}
+	\colorlet{tipColor}{secondary-light}
+	\colorlet{exampleColor}{primary-dark}
+	\colorlet{mathematicalColor}{primary-light}
+	\colorlet{codeColor}{code}
+}
+
+\reloadBoxColours
