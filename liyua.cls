@@ -3,6 +3,10 @@
 
 \LoadClass{article}
 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,left=20mm,top=20mm,bottom=20mm,right=40mm]{geometry}
+
 \RequirePackage{liyua-colors}
 \RequirePackage{liyua-maths}
 \RequirePackage{liyua-boxes}

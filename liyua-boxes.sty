@@ -1,9 +1,18 @@
 \ProvidesPackage{liyua-boxes}
 \NeedsTeXFormat{LaTeX2e}
 
+\RequirePackage{liyua-colors}
+
 \RequirePackage[most]{tcolorbox}
 
-\newtcolorbox{mybox}[1][]{%
-	title=mybox%
-	#1
+% #1: tcolorbox options
+% #2: color
+% #3: box title
+\newtcolorbox{customenvironment}[3][]{
+	colframe = #2,
+	colback  = #2!25,
+	coltitle = #2!20!black,
+	title    = {#3},
+	#1,
 }
+
