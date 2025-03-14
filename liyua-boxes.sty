@@ -5,14 +5,30 @@
 
 \RequirePackage[most]{tcolorbox}
 
-% #1: tcolorbox options
-% #2: color
-% #3: box title
-\newtcolorbox{customenvironment}[3][]{
-	colframe = #2,
-	colback  = #2!25,
-	coltitle = #2!20!black,
-	title    = {#3},
-	#1,
+% envname, title, color
+\newcommand{\newliyuabox}[3]{
+	\newcounter{#1}
+	\newtcolorbox[use counter=#1]{#1}{
+		colframe = #3,
+		colback  = #3!25,
+		coltitle = #3!20!black,
+		title    = \textbf{#2 \thetcbcounter}
+	}
 }
 
+\newliyuabox{example}{Example}{Teal}
+\newliyuabox{critical}{Critical}{Red}
+\newliyuabox{info}{Information}{Green}
+\newliyuabox{question}{Question}{Purple}
+\newliyuabox{examination}{Examination}{Yellow}
+\newliyuabox{warning}{Warning}{Orange}
+\newliyuabox{tip}{Tip}{LightBlue}
+
+\newliyuabox{maths}{Maths}{Orange}
+\newliyuabox{proof}{Proof}{Orange}
+\newliyuabox{theorem}{Theorem}{Orange}
+\newliyuabox{lemma}{Lemma}{Orange}
+\newliyuabox{corollary}{Corollary}{Orange}
+\newliyuabox{definition}{Definition}{Orange}
+\newliyuabox{axiom}{Axiom}{Orange}
+\newliyuabox{proposition}{Proposition}{Orange}
