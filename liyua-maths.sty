@@ -1,7 +1,7 @@
 \ProvidesPackage{liyua-maths}
 \NeedsTeXFormat{LaTeX2e}
 
-\RequirePackage{amsmath,amssymb}
+\RequirePackage{amsmath,amssymb,mathtools}
 
 \RequirePackage{siunitx}
 \sisetup{
@@ -9,6 +9,7 @@
 	per-mode = fraction
 }
 
+\DeclareMathSymbol{*}{\mathbin}{symbols}{"01}
 % https://github.com/tecosaur/BMC
 \newcommand{\RR}[1][]{\ensuremath{\ifstrempty{#1}{\mathbb{R}}{\mathbb{R}^{#1}}}}
 \newcommand{\NN}[1][]{\ensuremath{\ifstrempty{#1}{\mathbb{N}}{\mathbb{N}^{#1}}}}
@@ -19,3 +20,11 @@
 \newcommand{\HH}[1][]{\ensuremath{\ifstrempty{#1}{\mathbb{H}}{\mathbb{H}^{#1}}}}
 % expected value
 \newcommand{\EE}{\ensuremath{\mathbb{E}}}
+
+% https://github.com/tecosaur/BMC
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\round}{\lfloor}{\rceil}
