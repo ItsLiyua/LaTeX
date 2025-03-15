@@ -1,7 +1,7 @@
 \ProvidesClass{liyua}[Liyua's super cool template]
 \NeedsTeXFormat{LaTeX2e}
 
-\LoadClass{article}
+\LoadClass[titlepage]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}

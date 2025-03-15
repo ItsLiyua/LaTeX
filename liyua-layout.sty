@@ -2,21 +2,19 @@
 \NeedsTeXFormat{LaTeX2e}
 
 \RequirePackage{liyua-colors}
-\RequirePackage{fancyhdr}
-\RequirePackage{tikz}
-\RequirePackage{tikz-page}
-\RequirePackage{calc}
 
-\newcommand{\tikzpagelayout}{
-	% \tpshowframes
-	% \tikzpageputanchors
-	\fill [fill=primary](current page.south west) rectangle ++(\paperwidth, 1.5cm);
-	\node[outer sep=0,inner sep=0,anchor=base,color=white] at (page.footer center) {\textbf{\thepage}};
+\RequirePackage{tikz}
+\RequirePackage{titleps}
+
+\newpagestyle{titlepage}{
+	\begin{tikzpicture}[remember picture,overlay]
+		\fill[color=primary] (current page.north west) rectangle (current page.south east); % Background
+	\end{tikzpicture}
 }
-\pagestyle{plain}
-% \pagestyle{fancy}
-% \fancyhf{}
-% \fancyhead[L]{\colorbox{red}{Section}}
-% \fancyhead[R]{Subsection}
-%
-% \fancyfoot[C]{\textcolor{primary}{\textbf{\thepage}}}
+\renewcommand{\maketitle}{
+	\thispagestyle{titlepage}
+	\mbox{}
+	\newpage
+}
+\newpagestyle{liyua-toc}{}
+\newpagestyle{liyua}{}
