@@ -3,11 +3,20 @@
 
 \RequirePackage{liyua-colors}
 \RequirePackage{fancyhdr}
+\RequirePackage{tikz}
+\RequirePackage{tikz-page}
+\RequirePackage{calc}
 
-\pagestyle{fancy}
-\fancyhead{}
-\fancyfoot{}
-\fancyhead[L]{Section}
-\fancyhead[R]{Subsection}
-
-\fancyfoot[C]{\textcolor{primary}{\textbf{\thepage}}}
+\newcommand{\tikzpagelayout}{
+	% \tpshowframes
+	% \tikzpageputanchors
+	\fill [fill=primary](current page.south west) rectangle ++(\paperwidth, 1.5cm);
+	\node[outer sep=0,inner sep=0,anchor=base,color=white] at (page.footer center) {\textbf{\thepage}};
+}
+\pagestyle{plain}
+% \pagestyle{fancy}
+% \fancyhf{}
+% \fancyhead[L]{\colorbox{red}{Section}}
+% \fancyhead[R]{Subsection}
+%
+% \fancyfoot[C]{\textcolor{primary}{\textbf{\thepage}}}
