@@ -6,15 +6,30 @@
 \RequirePackage{tikz}
 \RequirePackage{titleps}
 
+\usetikzlibrary{calc}
+
 \newpagestyle{titlepage}{
 	\begin{tikzpicture}[remember picture,overlay]
 		\fill[color=primary] (current page.north west) rectangle (current page.south east); % Background
+		\node[color=page] ($(current page.north west)+(5cm,5cm)) {\@title}
 	\end{tikzpicture}
 }
+\newpagestyle{liyua-toc}{
+	\begin{tikzpicture}[remember picture,overlay]
+		\fill[color=secondary] (current page.north west) rectangle ($(current page.south west)+(\paperwidth{}/3,0)$);
+	\end{tikzpicture}
+}
+\newpagestyle{liyua}{}
+
 \renewcommand{\maketitle}{
 	\thispagestyle{titlepage}
 	\mbox{}
 	\newpage
 }
-\newpagestyle{liyua-toc}{}
-\newpagestyle{liyua}{}
+
+\renewcommand{\tableofcontents}{
+	\thispagestyle{liyua-toc}
+	\mbox{}
+	\newpage
+}
+\pagestyle{liyua}
