@@ -9,5 +9,6 @@
 
 \RequirePackage{liyua-colors}
 \RequirePackage{liyua-maths}
+\RequirePackage{liyua-layout}
 \RequirePackage{liyua-boxes}
 

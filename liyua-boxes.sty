@@ -8,7 +8,9 @@
 % envname, title, color
 \newcommand{\newliyuabox}[3]{
 	\newcounter{#1}
-	\newtcolorbox[use counter=#1]{#1}{
+	\newtcolorbox[
+		use counter=#1,
+	]{#1}{
 		colframe = #3,
 		colback  = #3!25,
 		coltitle = #3!20!black,
