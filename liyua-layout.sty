@@ -5,13 +5,17 @@
 
 \RequirePackage{tikz}
 \RequirePackage{titleps}
+\RequirePackage{soul}
+\RequirePackage{lmodern}
 
 \usetikzlibrary{calc}
+
+\newcommand{\ulcolor}[2][secondary]{\setulcolor{#1}\ul{#2}}
 
 \newpagestyle{titlepage}{
 	\begin{tikzpicture}[remember picture,overlay]
 		\fill[color=primary] (current page.north west) rectangle (current page.south east); % Background
-		\node[color=page] ($(current page.north west)+(5cm,5cm)) {\@title}
+		\draw ($(current page.north)-(0,\paperheight{}/3)$) node[font={\sffamily\fontsize{48}{52}\selectfont},color=white] {TikZ};
 	\end{tikzpicture}
 }
 \newpagestyle{liyua-toc}{
